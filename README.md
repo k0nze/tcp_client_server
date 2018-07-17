@@ -5,6 +5,8 @@ Adapted from: Suyash [https://gist.github.com/suyash/2488ff6996c98a8ee3a84fe3198
 ```bash
 cd build
 cmake ..
+make client
+make server
 ```
 
 ## Run
