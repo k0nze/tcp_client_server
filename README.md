@@ -22,3 +22,8 @@ cd build
 cd build
 ./client
 ```
+If you want to distinguish between multiple running clients you can specify a client ID as a command line argument like this:
+```bash
+cd build
+./client CLIENT_ID
+```

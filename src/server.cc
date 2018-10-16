@@ -159,6 +159,7 @@ int main(int argc, char *argv[]) {
                     maxlen -= n;
                     len += n;
 
+                    buffer[n] = '\0';
                     printf("received: '%s'\n", buffer);
 
                     std::string bounce = "Bounce message from client: ";
