@@ -1,8 +1,10 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <string.h>
+#include <string>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <iostream>
 
 /**
  * @brief TCP client
@@ -42,8 +44,20 @@ int main(int argc, char* argv[]) {
 	// send
 
 	// data that will be sent to the server
-	const char* data_to_send = "Hello!";
-	send(sock, data_to_send, strlen(data_to_send), 0);
+    // const char* data_to_send;
+    std::string data_to_send;
+    if(argc > 1) {
+        std::string tmp;
+        data_to_send = "Hello from client ";
+        data_to_send += argv[1];
+        // std::cout << "C++ string: " << data_to_send << std::endl;
+    } else {
+        data_to_send = "Hello from unspecified client!";
+    }
+
+    // printf("data_to_send: '%s'\n", data_to_send.c_str());
+
+	send(sock, data_to_send.c_str(), strlen(data_to_send.c_str()), 0);
 
 	// receive
 
